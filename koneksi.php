@@ -1,6 +1,6 @@
 <?php
 function getConnection() {
-    $host = 'autorack.proxy.rlwy.net:';
+    $host = 'autorack.proxy.rlwy.net';
     $user = 'root';
     $password = 'BpRknejwWZfUtMIMGuMlKeRaLobiFlxw';
     $dbname = 'railway';
