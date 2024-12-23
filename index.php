@@ -1,3 +1,3 @@
 <?php
-header("Location: form_handler.php");
+header("Location: dom.php");
 ?>
