@@ -1,7 +1,7 @@
 # UASPemweb
-Bayu Prameswara Haris
-122140219
-Pemrograman Web RA
+Bayu Prameswara Haris 
+- 122140219
+- Pemrograman Web RA
 
 ## Deskripsi Proyek
 Repositori ini merupakan implementasi dari tugas akhir mata kuliah Pemrograman Web. Aplikasi ini mencakup fitur-fitur client-side dan server-side programming, pengelolaan database, serta state management menggunakan session dan cookies.
