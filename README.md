@@ -86,3 +86,71 @@ Berisi perintah SQL untuk membuat tabel `tblMahasiswa`, dengan struktur:
    - Pastikan server lokal (XAMPP/WAMP) sudah aktif.
    - Letakkan semua file di folder `htdocs`.
    - Akses aplikasi melalui browser.
+
+UPDATE
+Hal ini dilakukan karena untuk menghosting aplikasi web yang saya buat melalui internet dengan mengupdate kodingan saya berupa :
+### koneksi.php
+Mengubah getConnection berupa :
+- $host = 'autorack.proxy.rlwy.net';
+- $user = 'root';
+- $password = 'BpRknejwWZfUtMIMGuMlKeRaLobiFlxw';
+- $dbname = 'railway';
+- $port = 48445;
+
+### index.php
+Entry point atau titik masuk utama untuk aplikasi berbasis PHP. 
+Cukup dengan menghubungkan langsung ke form_handler.php
+
+Untuk menghosting index.php melalui railway, ada beberapa cara :
+## 1. Persiapan Aplikasi
+Pastikan aplikasi Anda sudah lengkap dan siap untuk di-deploy:
+- **PHP**:
+  - Pastikan file `index.php` berada di direktori utama.
+  - Siapkan file `composer.json` jika menggunakan dependency dari Composer.
+
+## 2. Login ke Railway
+1. Buka [Railway](https://railway.app).
+2. Login menggunakan akun GitHub, GitLab, atau email Anda.
+
+## 3. Membuat Proyek Baru
+1. Klik **"New Project"** di dashboard Railway.
+2. Pilih salah satu opsi:
+   - **Deploy dari GitHub**: Hubungkan Railway dengan repositori GitHub Anda.
+   - **Deploy Manual**: Gunakan Railway CLI untuk mengunggah dari lokal.
+   - **Starter Templates**: Pilih template yang sesuai untuk aplikasi Anda.
+
+## 4. Hubungkan dengan GitHub
+1. Pilih opsi **"Deploy from GitHub Repo"**.
+2. Pilih repositori aplikasi Anda dari daftar.
+3. Railway akan mendeteksi file penting seperti `index.php`, `package.json`, atau `Dockerfile` secara otomatis.
+
+## 5. Konfigurasi Proyek
+Railway secara otomatis akan mencoba mengonfigurasi proyek Anda. Jika diperlukan, tambahkan konfigurasi berikut:
+### PHP
+Buat file `Procfile`:
+```
+web: php -S 0.0.0.0:80 -t .
+```
+
+## 6. Tambahkan Variabel Lingkungan
+Jika aplikasi Anda membutuhkan variabel lingkungan (environment variables):
+1. Buka menu **Settings > Variables** di dashboard Railway.
+2. Tambahkan kunci dan nilai yang dibutuhkan, seperti:
+```
+DATABASE_URL=mysql://user:password@hostname:port/dbname
+```
+
+## 7. Deploy Aplikasi
+1. Railway akan mulai membangun dan menjalankan aplikasi Anda.
+2. Tunggu proses build selesai.
+3. Anda akan mendapatkan URL otomatis seperti:
+   ```
+   https://your-app-name.up.railway.app
+   ```
+4. Akses URL ini untuk melihat aplikasi Anda.
+
+## 8. Tes dan Debugging
+- Pastikan aplikasi berjalan dengan baik di URL yang diberikan.
+- Jika ada error:
+  1. Periksa log aplikasi di menu **Deployments > Logs**.
+  2. Perbaiki masalah di kode Anda dan deploy ulang.
